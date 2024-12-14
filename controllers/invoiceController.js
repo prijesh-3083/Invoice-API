@@ -1,7 +1,5 @@
-// controllers/invoiceController.js
 const Invoice = require('../models/Invoice');
 const { generateInvoiceNumber } = require('../utils/invoiceNumberGenerator');
-// const { invoiceCreatedEvent, invoiceUpdatedEvent, invoiceDeletedEvent } = require('../events/invoiceEvents');
 const Joi = require('joi');
 const PDFGenerator = require('../utils/pdfGenerator');
 

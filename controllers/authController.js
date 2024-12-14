@@ -1,10 +1,6 @@
-// controllers/authController.js
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
-// const { ENV_VARS } =require("../config/envVars.js");
-const { generateTokenAndSetCookie } = require("../utils/generateToken.js");
-
 
 // Validation schema for user registration
 const registerSchema = Joi.object({
