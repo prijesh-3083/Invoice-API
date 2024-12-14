@@ -6,7 +6,7 @@ const authMiddleware = async (req, res, next) => {
         // Validate Authorization header
         const authHeader = req.header('Authorization');
         // Detailed logging for debugging
-        console.log('Received Authorization Header:', authHeader);
+        // console.log('Received Authorization Header:', authHeader);
         if (!authHeader) {
             return res.status(401).json({ 
                 error: 'Authorization header is missing',
@@ -48,24 +48,6 @@ const authMiddleware = async (req, res, next) => {
                 details: 'The user associated with this token no longer exists'
             });
         }
-
-
-        // Get token from header
-        // const token = req.header('Authorization')?.replace('Bearer ', '');
-
-        // if (!token) {
-            // return res.status(401).json({ error: 'No token, authorization denied' });
-        // }
-
-        // Verify token
-        // const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-        // Find user
-        // const user = await User.findById(decoded.userId);
-
-        // if (!user) {
-            // return res.status(401).json({ error: 'User not found' });
-        // }
 
         // Attach user and role to request
         req.user = user;
